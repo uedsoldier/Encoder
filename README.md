@@ -1,2 +1,2 @@
-# embedded-c-cpp-template
-Embedded C/C++ template
+# Encoder driver
+Incremental encoder simple driver

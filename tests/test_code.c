@@ -3,9 +3,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "../src/source_code.h"
+#include "../src/Encoder_Base.h"
 
-const char *TEST_NAME = "Floating point tester";
+const char *TEST_NAME = "Encoder tester";
 
 
 int main(int argc, char const *argv[])
