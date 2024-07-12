@@ -32,14 +32,22 @@ class Encoder_Base
 protected:
     uint16_t _pulses_per_revolution;
 
-    volatile bool _direction;
-    volatile int32_t _pulse_count;
+    volatile uint32_t _last_counter_value;  // Previous encoder timer counter value
+    volatile bool _direction;               // Encoder timer counting up or down
+    volatile int32_t _speed_raw;             // Pulses per period of time
+    volatile int32_t _position_raw;          // Total pulses
+    volatile uint32_t _time_period_us;      // Time period in [μs] to make speed calculations
 public:
     Encoder_Base();
     ~Encoder_Base();
 
     virtual bool getDirection() = 0;
-    virtual int32_t getPosition() = 0;
+    virtual int32_t getPositionRaw() = 0;
+    virtual int32_t getSpeedRaw() = 0;
+    virtual float getPosition() = 0;
+    virtual float getSpeed() = 0;
+
+    virtual void update() = 0;
 };
 #endif
 
