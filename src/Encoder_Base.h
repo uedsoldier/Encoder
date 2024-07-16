@@ -48,6 +48,8 @@ public:
     virtual float getSpeed() = 0;
 
     virtual void update() = 0;
+
+    void setTimePeriod_us(uint32_t time_period_us);
 };
 #endif
 
